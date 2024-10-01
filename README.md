@@ -10,14 +10,48 @@ commands when they occur.
 
 If you've used [nodemon], [guard], or [entr], it will probably feel familiar.
 
+**I recommend [Bacon] instead.** (see below for more)
+
 [nodemon]: http://nodemon.io/
 [entr]: https://github.com/eradman/entr
 [guard]: http://guardgem.org/
+[Bacon]: https://dystroy.org/bacon/
 
 - In the public domain / licensed with CC0.
 - Minimum Supported Rust Version: 1.70.0.
   - Only the last five stable versions are supported.
   - MSRV increases beyond that range at publish time will not incur major version bumps.
+
+## Maintenance
+
+Cargo Watch is on life support.
+
+I (@passcod) currently have very little time to dedicate to unpaid OSS.
+There is a significant amount of work I deem required to get Watchexec (the library) to a good-enough state to bring its improvements to Cargo Watch, and that has been the case for years without a realistic end in sight.
+I have dwindling motivation in the face of having spent 10 years on or around this project and its dependencies (it was a long while ago, but once upon a time the Notify library was spun off from Cargo Watch!), when at the very start, this tool was only made to clear a quick hurdle that I'd encountered while trying to code _other, probably more interesting, yet now long-forgotten_ Rust adventures.
+
+However, not all is lost, dear users.
+For almost the entire life of the project, I have had a thought: that someone with more resources, skill, time, and/or the benefit of hindsight would come around and make something _better_.
+Granted, I thought this would happen to Notify.
+But Notify has persisted, has been passed on to live a long life, and instead the contender is [Bacon].
+
+I have had no involvement in Bacon.
+Yet it is everything I have wanted to achieve in Cargo Watch.
+Indeed some five years ago I started development on a Cargo Watch replacement I called "Overwatch", which would have a TUI, a tasks file, a rich pager, and more long-desired features.
+That never eventuated, though a lot of the low-level improvements that I wrote in preparation for Overwatch "made it" into Notify version 5 and the Watchexec library version 2.
+Bacon today is what I wanted Overwatch to be.
+
+Let's face it: Cargo Watch has gone through too many incremental designs, with too little overarching design.
+It sports no less than four different syntaxes to run commands.
+Its filtering options can be obnoxious to use.
+Pager support is lackluster, sometimes requiring arcane invocations to get right.
+It can conflict with Rust Analyzer (which didn't exist 10 years ago!), though that has improved a lot over the years.
+
+It's time to let it go.  
+Use [Bacon].  
+Remember Cargo Watch.
+
+(Addendum: Cargo Watch _still works_. It will not go away. Someone motivated enough could bring it back to active support, if they so desired. Ask!)
 
 ## Install
 
