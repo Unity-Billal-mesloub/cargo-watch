@@ -18,9 +18,6 @@ If you've used [nodemon], [guard], or [entr], it will probably feel familiar.
 [Bacon]: https://dystroy.org/bacon/
 
 - In the public domain / licensed with CC0.
-- Minimum Supported Rust Version: 1.70.0.
-  - Only the last five stable versions are supported.
-  - MSRV increases beyond that range at publish time will not incur major version bumps.
 
 ## Maintenance
 
