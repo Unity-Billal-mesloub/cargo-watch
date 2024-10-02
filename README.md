@@ -469,7 +469,7 @@ is itself built on [Notify], and both of these can be used as Rust libraries.
   then **Notify** is your ticket.
 
 [Notify]: https://github.com/notify-rs/notify
-[Watchexec]: https://watchexec.github.io
+[Watchexec]: https://github.com/watchexec/watchexec
 
 ### Wait, is this just a wrapper on top of watchexec?
 
