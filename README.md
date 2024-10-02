@@ -10,7 +10,7 @@ commands when they occur.
 
 If you've used [nodemon], [guard], or [entr], it will probably feel familiar.
 
-**I recommend [Bacon] instead.** (see below for more)
+**I recommend [Bacon] or [Watchexec] instead.** (see below for more)
 
 [nodemon]: http://nodemon.io/
 [entr]: https://github.com/eradman/entr
@@ -49,7 +49,6 @@ It can conflict with Rust Analyzer (which didn't exist 10 years ago!), though th
 
 It's time to let it go.
 Use [Bacon].
-(Or [Watchexec].)
 Remember Cargo Watch.
 
 ## Install
