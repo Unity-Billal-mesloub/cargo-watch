@@ -49,9 +49,8 @@ It can conflict with Rust Analyzer (which didn't exist 10 years ago!), though th
 
 It's time to let it go.
 Use [Bacon].
+(Or [Watchexec].)
 Remember Cargo Watch.
-
-(Addendum: Cargo Watch _still works_. It will not go away. Someone motivated enough could bring it back to active support, if they so desired. Ask!)
 
 ## Install
 
