@@ -217,24 +217,58 @@ as-is: it will happily just restart your server normally.
 
 ### Restarting an application only if the build/check succeeds
 
-[Brought up by @LeDominik](https://github.com/watchexec/cargo-watch/issues/75),
-here's a pattern that may be very useful: you're working on a server or app,
-but want it to keep running while you're writing a new feature or fixing a bug,
-potentially causing the code not to compile anymore in the meantime.
+Supervising and starting/restarting/stopping long-running processes is explicitly not within Cargo Watch's remit.
+Instead, you should use a process manager.
+On most Linuxes, `systemd-run --user` is greatly useful here.
+On other platforms, a tool such as [pm2] or [pmc] can be used.
 
-In this case, you can use this strategy: run a first `cargo watch` with check,
-build, test, or whatever you want, and append `-s 'touch .trigger` (or equivalent
-for your platform). Then, run a second `cargo watch` simultaneously that _only_
-watches that `.trigger` file. For example:
+[pm2]: https://pm2.keymetrics.io
+[pmc]: https://lib.rs/crates/pmc
 
-```
-$ cargo watch -x check -s 'touch .trigger'
-```
+#### With systemd-run
 
-and
+Start the application service:
 
 ```
+$ systemd-run --user --pty --unit myappserver cargo run
+```
+
+Restart after a successful compile:
+
+```
+$ cargo -x check -x build -s 'systemctl --user restart myappserver'
+```
+
+#### With [pm2]
+
+Start the application service:
+
+```
+$ pm2 start --name myappserver cargo run
+$ pm2 logs -f myappserver
+```
+
+Restart after a successful compile:
+
+```
+$ cargo -x check -x build -s 'pm2 restart myappserver'
+```
+
+#### Or with cargo watch alone
+
+This uses a "trigger file" that's watched by a second cargo watch to manage a process.
+
+Start the application service:
+
+```
+$ touch .trigger
 $ cargo watch --no-vcs-ignores -w .trigger -x run
+```
+
+Restart after a successful compile:
+
+```
+$ cargo watch -x check -x build -s 'touch .trigger'
 ```
 
 The `--no-vcs-ignores` flag ensures that you can safely add `.trigger` to your
