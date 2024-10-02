@@ -24,7 +24,7 @@ If you've used [nodemon], [guard], or [entr], it will probably feel familiar.
 
 ## Maintenance
 
-Cargo Watch is on life support.
+Cargo Watch is on life support: it will not receive further updates, but does remain available.
 
 I (@passcod) currently have very little time to dedicate to unpaid OSS.
 There is a significant amount of work I deem required to get Watchexec (the library) to a good-enough state to bring its improvements to Cargo Watch, and that has been the case for years without a realistic end in sight.
@@ -41,14 +41,14 @@ Indeed some five years ago I started development on a Cargo Watch replacement I 
 That never eventuated, though a lot of the low-level improvements that I wrote in preparation for Overwatch "made it" into Notify version 5 and the Watchexec library version 2.
 Bacon today is what I wanted Overwatch to be.
 
-Let's face it: Cargo Watch has gone through too many incremental designs, with too little overarching design.
+Let's face it: Cargo Watch has gone through too many incremental changes, with too little overarching design.
 It sports no less than four different syntaxes to run commands.
-Its filtering options can be obnoxious to use.
-Pager support is lackluster, sometimes requiring arcane invocations to get right.
+Its lackluster filtering options can be obnoxious to use.
+Pager support is non-existent, sometimes requiring arcane invocations to get right.
 It can conflict with Rust Analyzer (which didn't exist 10 years ago!), though that has improved a lot over the years.
 
-It's time to let it go.  
-Use [Bacon].  
+It's time to let it go.
+Use [Bacon].
 Remember Cargo Watch.
 
 (Addendum: Cargo Watch _still works_. It will not go away. Someone motivated enough could bring it back to active support, if they so desired. Ask!)
